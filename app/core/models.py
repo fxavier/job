@@ -63,7 +63,7 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)
-        img = Image.open(self, image)
+        img = Image.open(self.image)
         if img.height > 200 or img.width > 200:
             new_size = (200, 200)
             img.thumbnail(new_size)
